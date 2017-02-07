@@ -35,9 +35,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'comfortable_mexican_sofa', '~> 1.12.0'
+#gem 'comfortable_mexican_sofa', '~> 1.12.0'
 
 gem 'devise'
+
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+
+gem "twitter-bootstrap-rails"
+
+#gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

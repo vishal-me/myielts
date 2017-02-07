@@ -1,1 +1,33 @@
-<h3> Welcome User <%=current_user.email%></h3>
+<% if user_signed_in? %>
+  <%= nav_bar static: :top do %>
+    <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :oncontextmenu=>"return false;", :id => "signout_element" %>
+  <%end%>
+  <h3> Welcome User <%=current_user.try(:email)%></h3>
+  
+<% else %>
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4">
+        <h1 class="text-center login-title">Sign in to continue</h1>
+        <div class="account-wall">
+          <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+          <%= form_for(User.new, :url => new_user_session_path, :html => {:class => "form-signin"}) do |f|%>
+            <%= content_tag :div, class: "form-group" do %>
+              <%= f.text_field :email, :placeholder => "Email Address", :class => "form-control email_placeholder", :type => "email" %>
+            <%end%>
+            <%= content_tag :div, class: "form-group" do %>
+              <%= f.password_field :password, placeholder: "Password", :class => "form-control pass_placeholder" %>
+            <%end%>
+            <%= content_tag :div, class: "form-group" do %>
+              <%= f.submit "Sign In", :id => "sign_in_submit", class: "btn btn-lg btn-primary btn-block" %>
+            <%end%>
+            <%= content_tag :div, :class => "form-group" do %>
+              <%= f.check_box :remember_me, :id => "remember-me", :name => "remember-me" %>
+              <%= f.label :remember_me, :for => "remember-me" %>
+            <% end %>
+          <% end %>
+        </div>
+        <%= link_to 'Create an account', new_user_registration_path, class: "text-center new-account" %>
+    </div>
+  </div>
+<% end %>
