@@ -5,29 +5,979 @@
   <h3> Welcome User <%=current_user.try(:email)%></h3>
   
 <% else %>
-  <div class="row">
-    <div class="col-sm-6 col-md-4 col-md-offset-4">
-        <h1 class="text-center login-title">Sign in to continue</h1>
-        <div class="account-wall">
-          <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                    alt="">
-          <%= form_for(User.new, :url => new_user_session_path, :html => {:class => "form-signin"}) do |f|%>
-            <%= content_tag :div, class: "form-group" do %>
-              <%= f.text_field :email, :placeholder => "Email Address", :class => "form-control email_placeholder", :type => "email" %>
-            <%end%>
-            <%= content_tag :div, class: "form-group" do %>
-              <%= f.password_field :password, placeholder: "Password", :class => "form-control pass_placeholder" %>
-            <%end%>
-            <%= content_tag :div, class: "form-group" do %>
-              <%= f.submit "Sign In", :id => "sign_in_submit", class: "btn btn-lg btn-primary btn-block" %>
-            <%end%>
-            <%= content_tag :div, :class => "form-group" do %>
-              <%= f.check_box :remember_me, :id => "remember-me", :name => "remember-me" %>
-              <%= f.label :remember_me, :for => "remember-me" %>
-            <% end %>
-          <% end %>
-        </div>
-        <%= link_to 'Create an account', new_user_registration_path, class: "text-center new-account" %>
-    </div>
+  
+
+  <div class="page-wrapper">
+    
+      <!-- Preloader -->
+      <div class="preloader"></div>
+    
+      <!-- Main Header / Header Style One-->
+      <header class="main-header header-style-one">
+          
+          <!--Header Top-->
+          <div class="header-top">
+            <div class="auto-container">
+                <div class="clearfix">
+                      <!--Top Left-->
+                      <div class="top-left">
+                          <div class="social-icon clearfix">
+                            <a href="#"><span class="fa fa-facebook"></span></a>
+                              <a href="#"><span class="fa fa-twitter"></span></a>
+                              <a href="#"><span class="fa fa-google-plus"></span></a>
+                              <a href="#"><span class="fa fa-linkedin"></span></a>
+                          </div>
+                          <div class="text">Have any question? <a href="#">Call Us Now!!</a></div>
+                      </div>
+                      
+                      <!--Top Right-->
+                      <div class="top-right">
+                          <ul class="top-nav clearfix">
+                              <li><a href="#">Privacy</a></li>
+                              <li><a href="/users/sign_in">Signin</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+        <!--Header-Upper-->
+          <div class="header-upper">
+            <div class="auto-container">
+                <div class="clearfix">
+                    
+                    <div class="logo-outer">
+                        <div class="logo"><a href="#" title="Futureoz"><img src="/assets/logo.png" alt="Futureoz"></a></div>
+                      </div>
+                      
+                      <div class="upper-right clearfix">
+                        
+                          <!--Info Box-->
+                          <div class="info-box">
+                            <div class="icon-box"><img src="/assets/phone-call.png" alt="Phone"></div>
+                              <ul>
+                                <li><strong>(+61)0290421000</strong></li>
+                                  <li>Futureoz@gmail.com</li>
+                              </ul>
+                          </div>
+                          
+                          <!--Info Box-->
+                          <div class="info-box">
+                            <div class="icon-box"><img src="/assets/placeholder.png" alt="Futureoz"></div>
+                              <ul> 
+                                <li><strong>Level 13, Suit 1309,</strong></li>
+                                  <li>87-89 Liverpool Street</li>
+                                  <li>Sydney 2000</li>
+                              </ul>
+                          </div>
+                          
+                          <!--Form Box-->
+                          <div class="info-box form-box">
+                <form method="post" action="#">
+                                  <!--Form Group-->
+                                  <div class="form-group">
+                                      <div class="group-inner">
+                                          <input type="text" name="username" placeholder="Search Here..." required>
+                                          <button type="submit" class="flaticon-search"></button>
+                                      </div>
+                  </div>
+                              </form>
+                          </div>
+                          
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+          
+          <!--Header-Lower-->
+          <div class="header-lower">
+              
+            <div class="auto-container">
+                <div class="nav-outer clearfix">
+                      <!-- Main Menu -->
+                      <nav class="main-menu">
+                          <div class="navbar-header">
+                              <!-- Toggle Button -->      
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              </button>
+                          </div>
+                          
+                          <div class="navbar-collapse collapse clearfix">
+                              <ul class="navigation clearfix">
+                                  <li class="current"><a href="#">Home</a></li>
+                                  <li class="dropdown"><a href="#">About Us</a>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                          <li><a href="#">What We Do</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="dropdown"><a href="#">Our Programs</a>
+                                    <ul>
+                                        <li><a href="#">Our Programs</a></li>
+                                          <li><a href="#">Training Coach</a></li>
+                                          <li><a href="#">Sales Negotiation</a></li>
+                                          <li><a href="#">Advisor Training</a></li>
+                                          <li><a href="#">Consultative Selling</a></li>
+                                          <li><a href="#">Sells Coaching</a></li>
+                                          <li><a href="#">High Selling</a></li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="#">Services</a></li>
+                                  <li><a href="#">Contact</a></li>
+                              </ul>
+                          </div>
+                      </nav><!-- Main Menu End-->
+                      
+                      <!--Outer Button-->
+                      <div class="outer-btn"><a href="#" class="theme-btn consultation">Free Consultation!!</a></div>
+                      
+                  </div>
+              </div>
+          </div>
+          
+          
+          <!--Sticky Header-->
+          <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="#" class="img-responsive"><img src="/assets/logo-small.png" alt="Futureoz" title="Futureoz"></a>
+                  </div>
+                  
+                  <!--Right Col-->
+                  <div class="right-col pull-right">
+                    <!-- Main Menu -->
+                      <nav class="main-menu">
+                          <div class="navbar-header">
+                              <!-- Toggle Button -->      
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              </button>
+                          </div>
+                          
+                          <div class="navbar-collapse collapse clearfix">
+                              <ul class="navigation clearfix">
+                                  <li class="current"><a href="#">Home</a></li>
+                                  <li class="dropdown"><a href="#">About Us</a>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Team</a></li>
+                                          <li><a href="#">What We Do</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="dropdown"><a href="#">Our Programs</a>
+                                    <ul>
+                                        <li><a href="#">Our Programs</a></li>
+                                          <li><a href="#">Training Coach</a></li>
+                                          <li><a href="#">Sales Negotiation</a></li>
+                                          <li><a href="#">Advisor Training</a></li>
+                                          <li><a href="#">Consultative Selling</a></li>
+                                          <li><a href="#">Sells Coaching</a></li>
+                                          <li><a href="#">High Selling</a></li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="#">Services</a></li>
+                                  <li><a href="#">Contact</a></li>
+                              </ul>
+                          </div>
+                      </nav><!-- Main Menu End-->
+                  </div>
+                  
+              </div>
+          </div><!--End Sticky Header-->
+      
+      </header>
+      <!--End Main Header -->
+      
+      <!--Main Slider-->
+      <section class="main-slider" data-start-height="750" data-slide-overlay="yes">
+        
+          <div class="tp-banner-container">
+              <div class="tp-banner">
+                  <ul>
+                    
+                      <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/assets/1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                      <img src="/assets/1.jpg" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="-50"
+                      data-speed="1500"
+                      data-start="500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><h2 class="big-title">Business Coaching & <br> Consulting for Entrepreneur</h2></div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="40"
+                      data-speed="1500"
+                      data-start="1000"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+            data-endeasing="Power4.easeIn"><div class="small-title">Lorem ipsum dolor sit amet, et eos populo noluisse atomorum nam labo fierent</div> </div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="110"
+                      data-speed="1500"
+                      data-start="1500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a> &ensp; <a href="#" class="theme-btn btn-style-two">Contact Us</a></div>
+                      
+                      
+                      </li>
+                      
+                      <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/assets/2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                      <img src="/assets/2.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="-50"
+                      data-speed="1500"
+                      data-start="500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><h2 class="big-title">Business Coaching & <br> Consulting for Entrepreneur</h2></div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="40"
+                      data-speed="1500"
+                      data-start="1000"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+            data-endeasing="Power4.easeIn"><div class="small-title">Lorem ipsum dolor sit amet, et eos populo noluisse atomorum nam labo fierent</div> </div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="110"
+                      data-speed="1500"
+                      data-start="1500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a> &ensp; <a href="#" class="theme-btn btn-style-two">Contact Us</a></div>
+                      
+                      </li>
+                      
+                      <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/assets/2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                      <img src="/assets/3.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="-50"
+                      data-speed="1500"
+                      data-start="500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><h2 class="big-title">Business Coaching & <br> Consulting for Entrepreneur</h2></div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="40"
+                      data-speed="1500"
+                      data-start="1000"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+            data-endeasing="Power4.easeIn"><div class="small-title">Lorem ipsum dolor sit amet, et eos populo noluisse atomorum nam labo fierent</div> </div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="110"
+                      data-speed="1500"
+                      data-start="1500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a> &ensp; <a href="#" class="theme-btn btn-style-two">Contact Us</a></div>
+                      
+                      </li>
+                      
+                      <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/assets/2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                      <img src="/assets/4.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="-50"
+                      data-speed="1500"
+                      data-start="500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><h2 class="big-title">Business Coaching & <br> Consulting for Entrepreneur</h2></div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="40"
+                      data-speed="1500"
+                      data-start="1000"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+            data-endeasing="Power4.easeIn"><div class="small-title">Lorem ipsum dolor sit amet, et eos populo noluisse atomorum nam labo fierent</div> </div>
+                      
+                      <div class="tp-caption sfl sfb tp-resizeme"
+                      data-x="left" data-hoffset="15"
+                      data-y="center" data-voffset="110"
+                      data-speed="1500"
+                      data-start="1500"
+                      data-easing="easeOutExpo"
+                      data-splitin="none"
+                      data-splitout="none"
+                      data-elementdelay="0.01"
+                      data-endelementdelay="0.3"
+                      data-endspeed="1200"
+                      data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a> &ensp; <a href="#" class="theme-btn btn-style-two">Contact Us</a></div>
+                      
+                      </li>
+                      
+                  </ul>
+              </div>
+          </div>
+      </section>
+      
+      <!--About Title-->
+      <section class="about-title">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="column col-md-4 col-sm-12 col-xs-12">
+                    <h2>Now you <br> Can take your business <br> Good to great</h2>
+                      <a href="#">More About Us</a>
+                  </div>
+                  <div class="column col-md-8 col-sm-12 col-xs-12">
+                    <h3>Commune nominavi at ius, vix delectus deterruisset cu. Quis dico legendos dicta qsu pedit nam ne. Cibo debitis interpretaris et eum, ei augue rect quo.</h3>
+                      <div class="text">Commune nominavi at ius, vix delectus deterruisset cu. Quis dico legendos ei ius, dictas peditern  nam ne. Cibo debitis interpretaris et eum, ei augue recteque quo. Ei cum modo fuger rcipit. At ferri inimicus voluptaria sit, tota nostro mediocrem sit in, ut impetus eripuit qsuemoriatur sed dsu estime ullum vivendo dissentiet, sea ut novum erroribus accommodare.</div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!--End About Title-->
+      
+      <!--Services Section-->
+      <section class="services-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+              
+                  <!--Services Block-->
+                  <div class="services-block col-md-4 col-sm-6 col-xs-12">
+                      <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                          <figure class="image-box">
+                              <a href="#"><img src="/assets/services-1.jpg" alt="" /></a>
+                              <div class="overlay-box">
+                                  <h3><a href="#">Sales & Marketing <br> Coaching</a></h3>
+                                  <a href="#" class="right-arrow fa fa-angle-right"></a>
+                              </div>
+                          </figure>
+                      </div>
+                  </div>
+                  
+                  <!--Services Block-->
+                  <div class="services-block col-md-4 col-sm-6 col-xs-12">
+                      <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                          <figure class="image-box">
+                              <a href="#"><img src="/assets/services-2.jpg" alt="" /></a>
+                              <div class="overlay-box">
+                                  <h3><a href="#">Sales Negoation & <br> Cosultative</a></h3>
+                                  <a href="#" class="right-arrow fa fa-angle-right"></a>
+                              </div>
+                          </figure>
+                      </div>
+                  </div>
+                  
+                  <!--Services Block-->
+                  <div class="services-block col-md-4 col-sm-6 col-xs-12">
+                      <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                          <figure class="image-box">
+                              <a href="#"><img src="/assets/services-3.jpg" alt="" /></a>
+                              <div class="overlay-box">
+                                  <h3><a href="#">Advisor & Training <br> Coaching</a></h3>
+                                  <a href="#" class="right-arrow fa fa-angle-right"></a>
+                              </div>
+                          </figure>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+          
+      </section>
+      <!--End Services Section-->
+      
+      <!--Program Section-->
+      <section class="program-section">
+        <div class="auto-container">
+          
+            <!--Title Box-->
+            <div class="title-box clearfix">
+                <h3>We Offer Bunce of Training &amp; Coaching Program!!</h3>
+              </div>
+              
+              <div class="row clearfix">
+              
+                <!--Program Block-->
+                <div class="program-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><img src="/assets/money-bag.png" width="40" height="40" alt="Money" /></div>
+                        <h3><a href="#">Training Coach</a></h3>
+                          <div class="text">Lorem ipsum dolor sit amtiamiu accusam vim, nemore elaboraro nam ad tota habeo dus. </div>
+                      </div>
+                  </div>
+                  
+                  <!--Program Block-->
+                <div class="program-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><img src="/assets/money-bag.png" width="40" height="40" alt="Money" /></div>
+                        <h3><a href="#">Sales Negotiation</a></h3>
+                          <div class="text">Lorem ipsum dolor sit amtiamiu accusam vim, nemore elaboraro nam ad tota habeo dus. </div>
+                      </div>
+                  </div>
+                  
+                  <!--Program Block-->
+                <div class="program-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><img src="/assets/money-bag.png" width="40" height="40" alt="Money" /></div>
+                        <h3><a href="#">Advisor Training</a></h3>
+                          <div class="text">Lorem ipsum dolor sit amtiamiu accusam vim, nemore elaboraro nam ad tota habeo dus. </div>
+                      </div>
+                  </div>
+                  
+                  <!--Program Block-->
+                <div class="program-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><<img src="/assets/money-bag.png" width="40" height="40" alt="Money" /></div>
+                        <h3><a href="#">Consultative Selling</a></h3>
+                          <div class="text">Lorem ipsum dolor sit amtiamiu accusam vim, nemore elaboraro nam ad tota habeo dus. </div>
+                      </div>
+                  </div>
+                  
+                  <!--Program Block-->
+                <div class="program-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><img src="/assets/money-bag.png" alt="Money" /></div>
+                        <h3><a href="#">Sells Coaching</a></h3>
+                          <div class="text">Lorem ipsum dolor sit amtiamiu accusam vim, nemore elaboraro nam ad tota habeo dus. </div>
+                      </div>
+                  </div>
+                  
+                  <!--Program Block-->
+                <div class="program-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="icon-box"><img src="/assets/money-bag.png" width="40" height="40" alt="Money" /></div>
+                        <h3><a href="#">High Selling</a></h3>
+                          <div class="text">Lorem ipsum dolor sit amtiamiu accusam vim, nemore elaboraro nam ad tota habeo dus. </div>
+                      </div>
+                  </div>
+                  
+              </div>
+              
+          </div>
+      </section>
+      <!--End Program Section-->
+      
+      <!--Counter Section-->
+      <section class="counter-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="image-column col-lg-5 col-md-4 col-sm-12 col-xs-12">
+                    <figure class="image-box wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <img src="/assets/couch-image.png" alt="" />
+                      </figure>
+                  </div>
+                  <div class="content-column col-lg-7 col-md-8 col-sm-12 col-xs-12">
+                    <div class="inner-box">
+                        <h2>How Business Coacing <br> Can Help you?</h2>
+                          <div class="style-text">We have lot of great service that can enough to hlep you</div>
+                          <div class="text">Lorem ipsum dolor sit amet, dolor dignis pri. Erant percipit imper diet <br> te. Et eum brute nulla novum admuo us dummy text. </div>
+                          
+                          <!--Fact Counter-->
+                          <div class="fact-counter">
+                              <div class="row clearfix">
+                              
+                                  <!--Counter Column-->
+                                  <div class="column col-md-4 col-sm-4 col-xs-12 counter-column wow fadeIn" data-wow-duration="0ms">
+                                      <div class="inner">
+                                          <div class="count-outer">
+                                              <div class="count-text" data-speed="2000" data-stop="18">0</div><span class="year">years</span>
+                                          </div>
+                                          <h4 class="counter-title">Expereince</h4>
+                                      </div>
+                                  </div>
+                                  
+                                  <!--Counter Column-->
+                                  <div class="column col-md-4 col-sm-4 col-xs-12 counter-column wow fadeIn" data-wow-duration="0ms">
+                                      <div class="inner">
+                                          <div class="count-outer">
+                                              <div class="count-text" data-speed="2000" data-stop="20">0</div><span class="year">K</span>
+                                          </div>
+                                          <h4 class="counter-title">Happy Client</h4>
+                                      </div>
+                                  </div>
+                                  
+                                  <!--Counter Column-->
+                                  <div class="column col-md-4 col-sm-4 col-xs-12 counter-column wow fadeIn" data-wow-duration="0ms">
+                                      <div class="inner"> 
+                                          <div class="count-outer">
+                                              <div class="count-text" data-speed="4000" data-stop="1200">0</div><span class="plus-icon">+</span>
+                                          </div>
+                                          <h4 class="counter-title">Project Done</h4>
+                                      </div>
+                                  </div>
+                                  
+                              </div>
+                          </div>
+
+                          <a href="#" class="theme-btn btn-style-three">Get a Quote</a>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!--End Counter Section-->
+      
+      <!--Fullwidth Section One-->
+      <section class="fullwidth-section-one" style="background-image: url(/assets/fullwidth-1.jpg);">
+        <div class="outer-box clearfix">
+          
+            <!--left column-->
+            <div class="left-column clearfix">
+                <div class="content-box clearfix">
+                    <div class="inner-box">
+                        <h3>Why Choose Us?</h3>
+                          <h4>Here will some subtitle what you want to</h4>
+                          <div class="text">Lorem ipsum dolor sit amtiamiu accusa vim, nemo dsu elraro nam ad tota habo dus no ellmoti. Nostro sapin ei tem elluri. Facete doct molesti percit.</div>
+                          <a href="#" class="theme-btn btn-style-one">Learn More</a>
+                      </div>
+                  </div>
+              </div>
+              
+              <!--right column-->
+              <div class="right-column">
+                <div class="services-outer">
+                    <div class="clearfix">
+                      
+                        <!--Services Block Two-->
+                          <div class="services-block-two col-md-6 col-sm-6 col-xs-12">
+                            <div class="inner-box">
+                                <div class="icon-box"><span class="icon flaticon-high-volume"></span></div>
+                                  
+                                  <h3>Expert Coach Trainer</h3>
+                                  <div class="text">Lorem ipsum dolor sit amet, dolor pr. Erant percipit imper brute nulla novum admuo us dummy text amet dolo.</div>
+                              </div>
+                          </div>
+                          
+                          <!--Services Block Two-->
+                          <div class="services-block-two col-md-6 col-sm-4 col-xs-12">
+                            <div class="inner-box">
+                                <div class="icon-box"><span class="icon flaticon-money-bag"></span></div>
+                                  <h3>Worth Every Penny</h3>
+                                  <div class="text">Lorem ipsum dolor sit amet, dolor pr. Erant percipit imper brute nulla novum admuo us dummy text amet dolo.</div>
+                              </div>
+                          </div>
+                          
+                          <!--Services Block Two-->
+                          <div class="services-block-two col-md-6 col-sm-4 col-xs-12">
+                            <div class="inner-box">
+                                <div class="icon-box"><span class="icon flaticon-rocket"></span></div>
+                                  <h3>Multi Times Award Winner</h3>
+                                  <div class="text">Lorem ipsum dolor sit amet, dolor pr. Erant percipit imper brute nulla novum admuo us dummy text amet dolo.</div>
+                              </div>
+                          </div>
+                          
+                          <!--Services Block Two-->
+                          <div class="services-block-two col-md-6 col-sm-4 col-xs-12">
+                            <div class="inner-box">
+                                <div class="icon-box"><span class="icon flaticon-umbrella"></span></div>
+                                  <h3>Trusted Company</h3>
+                                  <div class="text">Lorem ipsum dolor sit amet, dolor pr. Erant percipit imper brute nulla novum admuo us dummy text amet dolo.</div>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+      </section>
+      <!--End Fullwidth Section One-->
+      
+      <!--Team Section-->
+      <section class="team-section">
+        <div class="auto-container">
+            <h2>Our Expert</h2>
+              <div class="four-item-carousel">
+              
+                <!--Team Member-->
+                  <div class="team-member">
+                      <div class="inner-box">
+                          <div class="image-box">
+                              <img src="/assets/team-1.jpg" alt="" />
+                              <div class="overlay-box">
+                                <ul class="social-icon-two">
+                                      <li><a href="#" class="fa fa-facebook"></a></li>
+                                      <li><a href="#" class="fa fa-twitter"></a></li>
+                                      <li><a href="#" class="fa fa-google-plus"></a></li>
+                                      <li><a href="#" class="fa fa-linkedin"></a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="lower-content">
+                              <h3><a href="#">Jannatul Ferdous</a></h3>
+                              <div class="designation">Business & Marketing Expert</div>
+                              <div class="text">Neque porro quisquam dolorem utn ipsum quia dolormet consectet dsu adipisci velit, sed ut quia.</div>
+                              <a href="#" class="see-profile">See Profile</a>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!--Team Member-->
+                  <div class="team-member">
+                      <div class="inner-box">
+                          <div class="image-box">
+                              <img src="/assets/team-2.jpg" alt="" />
+                              <div class="overlay-box">
+                                <ul class="social-icon-two">
+                                      <li><a href="#" class="fa fa-facebook"></a></li>
+                                      <li><a href="#" class="fa fa-twitter"></a></li>
+                                      <li><a href="#" class="fa fa-google-plus"></a></li>
+                                      <li><a href="#" class="fa fa-linkedin"></a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="lower-content">
+                              <h3><a href="#">Rashed Kabir</a></h3>
+                              <div class="designation">Business & Marketing Expert</div>
+                              <div class="text">Neque porro quisquam dolorem utn ipsum quia dolormet consectet dsu adipisci velit, sed ut quia.</div>
+                              <a href="#" class="see-profile">See Profile</a>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!--Team Member-->
+                  <div class="team-member">
+                      <div class="inner-box">
+                          <div class="image-box">
+                              <img src="/assets/team-3.jpg" alt="" />
+                              <div class="overlay-box">
+                                <ul class="social-icon-two">
+                                      <li><a href="#" class="fa fa-facebook"></a></li>
+                                      <li><a href="#" class="fa fa-twitter"></a></li>
+                                      <li><a href="#" class="fa fa-google-plus"></a></li>
+                                      <li><a href="#" class="fa fa-linkedin"></a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="lower-content">
+                              <h3><a href="#">Jonathan Smith</a></h3>
+                              <div class="designation">Business & Marketing Expert</div>
+                              <div class="text">Neque porro quisquam dolorem utn ipsum quia dolormet consectet dsu adipisci velit, sed ut quia.</div>
+                              <a href="#" class="see-profile">See Profile</a>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!--Team Member-->
+                  <div class="team-member">
+                      <div class="inner-box">
+                          <div class="image-box">
+                              <img src="/assets/team-4.jpg" alt="" />
+                              <div class="overlay-box">
+                                <ul class="social-icon-two">
+                                      <li><a href="#" class="fa fa-facebook"></a></li>
+                                      <li><a href="#" class="fa fa-twitter"></a></li>
+                                      <li><a href="#" class="fa fa-google-plus"></a></li>
+                                      <li><a href="#" class="fa fa-linkedin"></a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="lower-content">
+                              <h3><a href="#">Muhibbur Rashid</a></h3>
+                              <div class="designation">Business & Marketing Expert</div>
+                              <div class="text">Neque porro quisquam dolorem utn ipsum quia dolormet consectet dsu adipisci velit, sed ut quia.</div>
+                              <a href="#" class="see-profile">See Profile</a>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </section>
+      <!--End Experts Section-->
+      
+      <!--Fullwidth Section Two-->
+      <section class="fullwidth-section-two">
+        <div class="outer-box clearfix">
+            <!--Left Column-->
+            <div class="left-column clearfix">
+                <div class="content-box clearfix">
+                    <div class="inner-box">
+                        <h2>CLient Feedback</h2>
+                          <h3>Dont only hear us, But also check our clinet feedabck</h3>
+                          <div class="single-item-carousel">
+                          
+                            <!--Testimonial Block-->
+                              <div class="testimonial-block">
+                                <div class="inner">
+                                    <div class="text">Lorem ipsum dolor sit amet, et ullum epicuri quo. Usu di pertina antiopam amet modera tius fuqe denique medi ocrem voluptau duo eius lorem ut eos lorem amet dolo ipsum sudu. No singulis postulant his, per decore elaboraret sadipscing te. </div>
+                                      <div class="client-info">
+                                        <div class="image"><img src="/assets/client-1.jpg" alt="" /></div>
+                                          <h4>Rashed kabir</h4>
+                                          <div class="designation">Managing Director of Bata</div>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                              <!--Testimonial Block-->
+                              <div class="testimonial-block">
+                                <div class="inner">
+                                    <div class="text">Lorem ipsum dolor sit amet, et ullum epicuri quo. Usu di pertina antiopam amet modera tius fuqe denique medi ocrem voluptau duo eius lorem ut eos lorem amet dolo ipsum sudu. No singulis postulant his, per decore elaboraret sadipscing te. </div>
+                                      <div class="client-info">
+                                        <div class="image"><img src="/assets/client-1.jpg" alt="" /></div>
+                                          <h4>Rashed kabir</h4>
+                                          <div class="designation">Managing Director of Bata</div>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                              <!--Testimonial Block-->
+                              <div class="testimonial-block">
+                                <div class="inner">
+                                    <div class="text">Lorem ipsum dolor sit amet, et ullum epicuri quo. Usu di pertina antiopam amet modera tius fuqe denique medi ocrem voluptau duo eius lorem ut eos lorem amet dolo ipsum sudu. No singulis postulant his, per decore elaboraret sadipscing te. </div>
+                                      <div class="client-info">
+                                        <div class="image"><img src="/assets/client-1.jpg" alt="" /></div>
+                                          <h4>Rashed kabir</h4>
+                                          <div class="designation">Managing Director of Bata</div>
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <!--Right Column-->
+              <div class="right-column">
+                <div class="form-outer">
+                    <h2>Request a call back</h2>
+                    <div class="clearfix">
+                        <!--Default Form-->
+                        <div class="default-form">
+                              <form method="post">
+                                  <div class="row clearfix">
+          
+                                      <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                          <div class="group-inner">
+                                              <input type="text" name="username" value="" placeholder="Username *" required>
+                                          </div>
+                                      </div>
+          
+                                      <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                          <div class="group-inner">
+                                              <input type="email" name="email" value="" placeholder="Email Address *" required>
+                                          </div>
+                                      </div>
+          
+                                      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                          <div class="group-inner">
+                                              <input type="text" name="subject" placeholder="Subject" required>
+                                          </div>
+                                      </div>
+          
+                                      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                          <div class="group-inner">
+                                              <textarea name="message" placeholder="Message"></textarea>
+                                          </div>
+                                      </div>
+                                      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                          <button type="submit" class="theme-btn btn-style-one">SEND Now</button>
+                                      </div>
+                                  </div>
+                              </form>
+                        </div>
+                        <!--End Default Form-->
+            </div>
+                  </div>
+              </div>
+              
+          </div>
+      </section>
+      <!--End Fullwidth Section One-->
+      
+      
+      
+      <!--Map Section-->
+      <!--<section class="map-section">
+        <div class="map-outer">
+              <div class="map-canvas"
+                  data-zoom="13"
+                  data-lat="-37.817085"
+                  data-lng="144.955631"       
+                  data-type="roadmap"
+                  data-hue="#ffc400"
+                  data-title="Envato"
+                  data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>"              
+                  style="height: 450px;">
+              </div>
+          </div>
+      </section>-->
+    <!--End Map Section-->
+      
+      <!--Main Footer-->
+      <footer class="main-footer">
+      <!--Upper Box-->
+          
+          <div class="upper-box">
+            <div class="auto-container">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <h2>Have any question or need any business consultation? </h2>
+                      </div>
+                      <div class="pull-right">
+                        <a href="#" class="theme-btn btn-style-one">Contact Us Now!!</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <!--Widgets Section-->
+          <div class="widgets-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <!--Big Column-->
+                    <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                        <div class="row clearfix">
+
+                              <!--Footer Column / Subscribe Widget-->
+                            <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="footer-widget subscribe-widget">
+                                    <div class="widget-content">
+                      <div class="text">Lorem ipsum dolor  amet natum latine copiosa at quo, suas labore saperet  has there any quote for write lorem percit latineu suas dummy sample lorem emi ipsum dummy text.</div>
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+
+                              <!--Footer Column / Links Widget-->
+                            <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="footer-widget links-widget">
+                                    <h2>Quick Links</h2>
+                                      <div class="widget-content">
+                                        <div class="row clearfix">
+                                              <ul class="list col-md-6 col-sm-6 col-xs-12">
+                                                  <li><a href="#">Home</a></li>
+                                                  <li><a href="#">Features</a></li>
+                                                  <li><a href="#">About us</a></li>
+                                                  <li><a href="#">Services</a></li>
+                                                  <li><a href="#">Projects</a></li>
+                                              </ul>
+                                              <ul class="list col-md-6 col-sm-6 col-xs-12">
+                                                  <li><a href="#">Contact us</a></li>
+                                                  <li><a href="#">FAQ</a></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+
+                      <!--Big Column-->
+                    <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                        <div class="row clearfix">
+                              <div class="footer-widget address-widget">
+                                  <h2>Our Address</h2>
+                                  <div class="widget-content">
+                                      <ul class="list-style-one">
+                                          <li><span class="icon fa fa-map-marker"></span> 60 Grant Ave. Central New Road 0708, UK</li>
+                                          <li><span class="icon fa fa-phone"></span> (880) 1723801729</li>
+                                          <li><span class="icon fa fa-envelope"></span> homemaker@gmail.com</li>
+                                          <li><span class="icon fa fa-clock-o"></span> 9:00pm - 5:00pm Sunday Closed</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                   </div>
+               </div>
+           </div>
+
+           <!--Footer Bottom-->
+           <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="row clearfix">
+                      <div class="col-md-8 col-sm-12 col-xs-12">
+                          <div class="copyright">Copyright <a href="#">Futureoz</a> &copy; 2017</div>
+                      </div>
+                      <div class="col-md-4 col-sm-12 col-xs-12 text-right">
+                          <ul class="social-icon-one">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                              <li><a href="#" class="fa fa-twitter"></a></li>
+                              <li><a href="#" class="fa fa-google-plus"></a></li>
+                              <li><a href="#" class="fa fa-pinterest-p"></a></li>
+                              <li><a href="#" class="fa fa-vimeo"></a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+           </div>
+
+      </footer>
+      
   </div>
-<% end %>
+  <!--End pagewrapper-->
+
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target=".main-header"><span class="icon fa fa-long-arrow-up"></span></div>
+<%end%>
